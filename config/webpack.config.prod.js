@@ -58,7 +58,8 @@ module.exports = {
   // In production, we only want to load the polyfills and the app code.
   entry: {
     app: [require.resolve('./polyfills'), paths.appIndexJs],
-    'async-head': './src/utils'
+    'async-head': './src/utils',
+    test: './src/utils/test'
   },
   output: {
     // The build folder.
