@@ -55,3 +55,5 @@ export async function loadHeadFile(url, cb) {
         })
     }
 }
+
+export default loadHeadFile
