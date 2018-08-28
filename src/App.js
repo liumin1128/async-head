@@ -8,11 +8,12 @@ class App extends PureComponent {
   componentDidMount() {
     this.loadQiniuPlayer()
   }
-  loadQiniuPlayer = () => {
-    loadHeadFile([
+  loadQiniuPlayer = async () => {
+    await loadHeadFile([
       'http://localhost:3000/qiniu/qiniuplayer.min.js',
       'http://localhost:3000/qiniu/qiniuplayer.min.css'
-    ], this.initQiniuPlayer)
+    ])
+    await this.initQiniuPlayer()
   }
   initQiniuPlayer = () => {
     const options = {

@@ -11,7 +11,7 @@ export const elementOnload = (element) => new Promise(resolve => {
     }
 })
 
-export async function loadHeadFile(url, cb) {
+export async function loadHeadFile(url) {
     const head = document.getElementsByTagName('head')[0]
     const urlList = typeof url === 'string' ? [url] : url;
     const objList = []
@@ -38,22 +38,35 @@ export async function loadHeadFile(url, cb) {
                 break;
         }
     })
-    if (cb) {
-        try {
-            const data = await Promise.all(objList.map(i => {
-                head.appendChild(i)
-                return elementOnload(i)
-            }))
-            await cb()
-        } catch (error) {
-            console.log('error')
-            console.log(error)
-        }
-    } else {
-        objList.map(i => {
+    // if (cb) {
+    //     try {
+    //         const data = await Promise.all(objList.map(i => {
+    //             head.appendChild(i)
+    //             return elementOnload(i)
+    //         }))
+    //         await cb()
+    //     } catch (error) {
+    //         console.log('error')
+    //         console.log(error)
+    //     }
+    // } else {
+    //     objList.map(i => {
+    //         head.appendChild(i)
+    //     })
+    // }
+
+    try {
+        await Promise.all(objList.map(i => {
             head.appendChild(i)
-        })
+            return elementOnload(i)
+        }))
+    console.log('111')
+
+    } catch (error) {
+        console.log('error')
+        console.log(error)
     }
+
 }
 
 export default loadHeadFile
