@@ -60,7 +60,6 @@ export async function loadHeadFile(url) {
             head.appendChild(i)
             return elementOnload(i)
         }))
-    console.log('111')
 
     } catch (error) {
         console.log('error')

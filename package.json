@@ -8,6 +8,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
+    "publish": "nrm use npm && npm publish && nrm use taobao",
     "test": "node scripts/test.js --env=jsdom"
   },
   "jest": {
