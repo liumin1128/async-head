@@ -1,6 +1,6 @@
 {
   "name": "async-head",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "main": "async-head.js",
   "files": [
     "build"
@@ -52,7 +52,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "dependencies": {
+  "devDependencies": {
     "autoprefixer": "7.1.6",
     "babel-core": "6.26.0",
     "babel-eslint": "7.2.3",
